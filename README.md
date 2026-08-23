@@ -4,6 +4,8 @@
 
 這個網站記錄我的專業經歷、系統整合能力、可公開專案與持續研究方向，內容涵蓋智慧工廠、製造與倉儲系統、全端軟體開發，以及 AI 相關研究。
 
+Website: [https://guanwei514.github.io/guanwei-website/](https://guanwei514.github.io/guanwei-website/)
+
 ## Technology
 
 - React
