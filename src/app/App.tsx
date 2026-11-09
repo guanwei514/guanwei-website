@@ -9,6 +9,7 @@ import { ContactSection } from "@/sections/ContactSection"
 import { ExperienceSection } from "@/sections/ExperienceSection"
 import { HeroSection } from "@/sections/HeroSection"
 import { ProjectsSection } from "@/sections/ProjectsSection"
+import { ProductsSection } from "@/sections/ProductsSection"
 import { ResearchSection } from "@/sections/ResearchSection"
 import { SkillsSection } from "@/sections/SkillsSection"
 
@@ -36,6 +37,7 @@ export const App = () => {
         <ExperienceSection content={content.experience} />
         <SkillsSection content={content.skills} />
         <ResearchSection content={content.research} />
+        <ProductsSection content={content.products} />
         <ProjectsSection content={content.work} />
         <ContactSection content={content.contact} />
       </main>

@@ -5,6 +5,7 @@ import aiResearchNotebookImage from "@/assets/portfolio/ai-research-notebook.gif
 import robotControlImage from "@/assets/portfolio/robot-control.jpg"
 import smartManufacturingImage from "@/assets/portfolio/smart-manufacturing.webp"
 import stirrupProductionImage from "@/assets/portfolio/stirrup-production.webp"
+import apiMasterPoster from "@/assets/products/gw-api-master-poster.jpg"
 import type { Language, SiteContent } from "@/types/site"
 
 export const siteContent: Record<Language, SiteContent> = {
@@ -21,6 +22,7 @@ export const siteContent: Record<Language, SiteContent> = {
       { id: "experience", label: "經歷" },
       { id: "skills", label: "專業" },
       { id: "research", label: "研究" },
+      { id: "products", label: "產品" },
       { id: "work", label: "專案" },
       { id: "contact", label: "聯絡" },
     ],
@@ -268,8 +270,28 @@ export const siteContent: Record<Language, SiteContent> = {
         "研究重點不只是導入模型，而是建立從現場問題、知識語意、模型能力到系統落地的完整路徑，持續評估 AI 如何改變現行工廠與未來藍圖規劃。",
       title: "持續鑽研 AI\n探索工廠的下一步",
     },
+    products: {
+      eyebrow: "05 · PERSONAL PRODUCTS",
+      title: "個人產品\n為實際需求打造",
+      intro: "從開發與系統整合的實際需求出發，持續打造自己的軟體產品。這裡記錄產品的功能、操作方式與演進。",
+      videoFallback: "開啟產品介紹影片",
+      items: [
+        {
+          id: "gw-api-master",
+          name: "GW API Master",
+          category: "API 整合與測試工具",
+          version: "v2.2.0",
+          description: "將 API 請求、Callback 接收與測試紀錄整理在同一個桌面工作台，讓開發與系統整合的驗證流程更清楚。透過 MCP，外部 AI 也能操作既有工具並讀取回應與紀錄。",
+          features: ["API 請求與回應檢視", "Callback 與多 IP／Port 監聽", "群組、備註與 CSV 紀錄", "AI／MCP 操作入口"],
+          videoSrc: `${import.meta.env.BASE_URL}videos/gw-api-master-2.2.0.mp4`,
+          poster: apiMasterPoster,
+          videoLabel: "GW API Master 2.2.0 產品介紹",
+          videoDescription: "01:21 · 繁體中文畫面 · 背景音樂，無旁白",
+        },
+      ],
+    },
     work: {
-      eyebrow: "05 · SELECTED WORK",
+      eyebrow: "06 · SELECTED WORK",
       intro:
         "目前僅展示可公開的代表性專案，記錄我如何在不同階段整合控制、設備與軟體，逐步把研究概念與現場需求轉化為可運作的成果。目前工作重心已延伸至倉儲核心系統，相關現行專案與研發內容涉及保密，暫不對外揭露。",
       projects: [
@@ -341,15 +363,15 @@ export const siteContent: Record<Language, SiteContent> = {
       description:
         "如果你正面對製造自動化、智慧倉儲、工廠智慧化轉型或複雜系統整合問題，我樂於從現場需求、技術可行性與交付風險一起梳理，找到真正能實現的方向。",
       emailLabel: "寄送 Email",
-      eyebrow: "06 · CONTACT",
+      eyebrow: "07 · CONTACT",
       githubLabel: "GitHub",
       linkedInLabel: "LinkedIn",
       title: "釐清複雜問題\n讓解決方案真正落地",
     },
     footer: {
       backToTop: "回到頂端",
-      lastUpdated: "最後更新：2026/08/23",
-      lastUpdatedIso: "2026-08-23",
+      lastUpdated: "最後更新：2026/11/09",
+      lastUpdatedIso: "2026-11-09",
     },
   },
   en: {
@@ -365,6 +387,7 @@ export const siteContent: Record<Language, SiteContent> = {
       { id: "experience", label: "Experience" },
       { id: "skills", label: "Expertise" },
       { id: "research", label: "Research" },
+      { id: "products", label: "Products" },
       { id: "work", label: "Work" },
       { id: "contact", label: "Contact" },
     ],
@@ -612,8 +635,28 @@ export const siteContent: Record<Language, SiteContent> = {
         "The goal is not simply to add a model, but to build a complete path from field problems and shared semantics to model capability and system delivery—continuously evaluating how AI can reshape today's factories and tomorrow's architecture.",
       title: "Ongoing AI research.\nThe next factory blueprint.",
     },
+    products: {
+      eyebrow: "05 · PERSONAL PRODUCTS",
+      title: "Personal products.\nBuilt for real work.",
+      intro: "Software products shaped by hands-on development and system integration. A place to share their capabilities, workflows, and ongoing evolution.",
+      videoFallback: "Open the product introduction video",
+      items: [
+        {
+          id: "gw-api-master",
+          name: "GW API Master",
+          category: "API integration & testing",
+          version: "v2.2.0",
+          description: "A desktop workbench that brings API requests, Callback reception, and test records together for clearer integration testing. Through MCP, external AI can operate the existing tools and read responses and saved records.",
+          features: ["API requests & response inspection", "Callback & multiple IP / Port listeners", "Groups, notes & CSV records", "AI / MCP tool access"],
+          videoSrc: `${import.meta.env.BASE_URL}videos/gw-api-master-2.2.0.mp4`,
+          poster: apiMasterPoster,
+          videoLabel: "GW API Master 2.2.0 product introduction",
+          videoDescription: "01:21 · Traditional Chinese visuals · Music, no narration",
+        },
+      ],
+    },
     work: {
-      eyebrow: "05 · SELECTED WORK",
+      eyebrow: "06 · SELECTED WORK",
       intro:
         "Only selected projects cleared for public viewing are shown here. They illustrate how I have connected controls, equipment, and software to turn research concepts and field requirements into working results. My current focus has expanded into warehouse core systems; related active projects and R&D work remain confidential and are not disclosed.",
       projects: [
@@ -685,15 +728,15 @@ export const siteContent: Record<Language, SiteContent> = {
       description:
         "If you are facing a manufacturing automation, smart warehousing, factory transformation, or complex system integration challenge, I am happy to clarify the field requirements, technical feasibility, and delivery risks with you to find a direction that can truly be implemented.",
       emailLabel: "Send an email",
-      eyebrow: "06 · CONTACT",
+      eyebrow: "07 · CONTACT",
       githubLabel: "GitHub",
       linkedInLabel: "LinkedIn",
       title: "Clarify complexity.\nDeliver what works.",
     },
     footer: {
       backToTop: "Back to top",
-      lastUpdated: "Last updated: 2026/08/23",
-      lastUpdatedIso: "2026-08-23",
+      lastUpdated: "Last updated: 2026/11/09",
+      lastUpdatedIso: "2026-11-09",
     },
   },
 }

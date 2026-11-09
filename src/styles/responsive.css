@@ -13,7 +13,9 @@
     right: 0;
     z-index: 120;
     width: 100vw;
-    min-height: 100dvh;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 28px 32px 48px;
     color: var(--color-white);
     background: var(--color-ink);
@@ -211,6 +213,11 @@
 
   .research-card {
     grid-template-columns: 1fr;
+  }
+
+  .product-feature {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .research-card__media,

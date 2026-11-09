@@ -4,6 +4,7 @@ export const sectionIds = [
   "experience",
   "skills",
   "research",
+  "products",
   "work",
   "contact",
 ] as const
@@ -74,6 +75,19 @@ export interface ProjectItem {
   imageAlt?: string
   tags: string[]
   title: string
+}
+
+export interface ProductItem {
+  id: string
+  name: string
+  category: string
+  version: string
+  description: string
+  features: string[]
+  videoSrc: string
+  poster: string
+  videoLabel: string
+  videoDescription: string
 }
 
 export interface SiteContent {
@@ -157,6 +171,13 @@ export interface SiteContent {
     }
     statement: string
     title: string
+  }
+  products: {
+    eyebrow: string
+    title: string
+    intro: string
+    videoFallback: string
+    items: ProductItem[]
   }
   work: {
     eyebrow: string

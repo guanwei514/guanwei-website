@@ -1058,6 +1058,119 @@ html[lang="en"] .hero-copy h1 {
   font-size: 0.82rem;
 }
 
+.products-section {
+  background: var(--color-paper-bright);
+}
+
+.product-list {
+  display: grid;
+  gap: 40px;
+}
+
+.product-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 64px);
+  padding-top: 40px;
+  border-top: 1px solid var(--color-line);
+}
+
+.product-feature__body {
+  min-width: 0;
+}
+
+.product-feature__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+.product-feature__meta span:last-child {
+  padding: 4px 9px;
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+}
+
+.product-feature h3 {
+  margin-bottom: 22px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.product-feature__body > p {
+  margin-bottom: 28px;
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.product-feature__features {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.product-feature__features li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 0.8rem;
+}
+
+.product-feature__features li::before {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 1px;
+  content: "";
+}
+
+.product-feature__film {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-ink);
+  border: 1px solid var(--color-dark-line);
+  border-radius: 6px;
+  box-shadow: var(--shadow-card);
+}
+
+.product-feature__film video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-ink);
+  object-fit: contain;
+}
+
+.product-feature__film video:focus-visible {
+  outline-color: var(--color-signal);
+  outline-offset: -4px;
+}
+
+.product-feature__film figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  padding: 16px 20px;
+  color: var(--color-dark-muted);
+  border-top: 1px solid var(--color-dark-line);
+  font-size: 0.66rem;
+}
+
+.product-feature__film figcaption span:first-child {
+  color: var(--color-white);
+}
+
 .projects-section {
   background: var(--color-paper);
 }
