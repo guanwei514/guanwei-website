@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="32" fill="#0b1b2b" />
-  <path d="M15 20h7l5 24h-7l-5-24Zm27 0h7l-6 24h-7l-4-15-4 15h-7l7-24h7l4 15 3-15Z" fill="#ff6b35" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="GW development — compact icon"><title>GW development — compact icon</title><rect width="256" height="256" rx="32" fill="#081311"/><g fill="#FFFFFF"><path d="M30 88 L52 184 Q56 198 72 198 H96 Q108 198 112 180 L128 130 L144 180 Q148 198 160 198 H184 Q200 198 204 184 L226 88 L204 100 L186 170 Q184 178 178 178 H166 L146 112 H110 L90 178 H78 Q72 178 70 170 L52 100 Z"/><path d="M18 104 Q128 126 238 104 L226 124 Q128 142 30 124 Z"/><path d="M34 82 L42 54 H94 L78 68 H58 L54 82 Z"/><path d="M222 82 L214 54 H162 L178 68 H198 L202 82 Z"/></g></svg>

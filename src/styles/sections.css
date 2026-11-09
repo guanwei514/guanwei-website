@@ -1,12 +1,35 @@
 .hero-section {
+  --color-ink-soft: var(--color-dark-muted);
+  --color-line: var(--color-dark-line);
+  --color-accent: var(--color-signal);
   position: relative;
   min-height: 100svh;
   padding-top: 150px;
+  color: var(--color-white);
   background:
-    radial-gradient(circle at 78% 30%, rgba(36, 87, 214, 0.14), transparent 30%),
-    linear-gradient(110deg, transparent 62%, rgba(255, 255, 255, 0.42) 62%);
+    radial-gradient(ellipse at 80% 24%, rgba(27, 74, 70, 0.42), transparent 54%),
+    linear-gradient(rgba(158, 217, 190, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(158, 217, 190, 0.025) 1px, transparent 1px),
+    var(--color-ink);
+  background-size: auto, 80px 80px, 80px 80px, auto;
   overflow: hidden;
   scroll-margin-top: 0;
+}
+
+.hero-section .eyebrow,
+.hero-copy__greeting strong {
+  color: var(--color-signal);
+}
+
+.hero-section .button--text {
+  color: var(--color-white);
+}
+
+.hero-section :focus-visible,
+.skills-section :focus-visible,
+.contact-section :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--color-signal);
 }
 
 .hero-section__grid {
@@ -32,7 +55,7 @@
 
 .hero-copy__topline > span {
   color: var(--color-ink-soft);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.62rem;
   letter-spacing: 0.1em;
 }
@@ -43,18 +66,14 @@
   font-size: clamp(1rem, 1.8vw, 1.3rem);
 }
 
-.hero-copy__greeting strong {
-  color: var(--color-blue);
-}
-
 .hero-copy h1 {
   max-width: 860px;
   margin-bottom: 30px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(3.9rem, 6.2vw, 6.7rem);
   font-weight: 760;
-  letter-spacing: -0.065em;
-  line-height: 0.88;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
   line-break: strict;
   white-space: pre-line;
   text-wrap: balance;
@@ -62,14 +81,14 @@
 
 html[lang="zh-TW"] .hero-copy h1 {
   font-size: clamp(3.7rem, 5.2vw, 5.3rem);
-  letter-spacing: -0.055em;
-  line-height: 0.96;
+  letter-spacing: -0.025em;
+  line-height: 1.16;
 }
 
 html[lang="en"] .hero-copy h1 {
   font-size: clamp(3.5rem, 4.6vw, 4.3rem);
-  letter-spacing: -0.055em;
-  line-height: 0.96;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 .hero-copy__summary {
@@ -93,11 +112,12 @@ html[lang="en"] .hero-copy h1 {
   max-height: 560px;
   border: 1px solid var(--color-line);
   background:
-    linear-gradient(rgba(36, 87, 214, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 87, 214, 0.08) 1px, transparent 1px),
-    rgba(252, 250, 245, 0.52);
+    linear-gradient(rgba(158, 217, 190, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(158, 217, 190, 0.05) 1px, transparent 1px),
+    rgba(8, 19, 17, 0.5);
   background-size: 32px 32px;
   box-shadow: var(--shadow-card);
+  border-radius: 6px;
 }
 
 .system-visual::before,
@@ -105,7 +125,7 @@ html[lang="en"] .hero-copy h1 {
   position: absolute;
   width: 28px;
   height: 28px;
-  border-color: var(--color-orange);
+  color: var(--color-signal);
   content: "";
 }
 
@@ -130,8 +150,8 @@ html[lang="en"] .hero-copy h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.55rem;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -139,9 +159,9 @@ html[lang="en"] .hero-copy h1 {
 .system-visual__status span {
   width: 7px;
   height: 7px;
-  background: var(--color-green);
+  background: var(--color-signal);
   border-radius: 50%;
-  box-shadow: 0 0 0 5px rgba(84, 213, 140, 0.16);
+  box-shadow: 0 0 0 5px rgba(158, 217, 190, 0.16);
   animation: status-pulse 2s ease-in-out infinite;
 }
 
@@ -159,18 +179,18 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .ontology-link {
-  stroke: rgba(36, 87, 214, 0.44);
+  stroke: rgba(158, 217, 190, 0.5);
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
 }
 
 .ontology-link--relation {
-  stroke: rgba(11, 27, 43, 0.18);
+  stroke: var(--color-dark-line);
   stroke-dasharray: 4 5;
 }
 
 .ontology-link__point {
-  fill: var(--color-orange);
+  fill: var(--color-accent);
 }
 
 .ontology-node,
@@ -182,9 +202,10 @@ html[lang="en"] .hero-copy h1 {
 .ontology-node {
   width: 34%;
   padding: 12px 14px;
-  background: rgba(252, 250, 245, 0.92);
-  border: 1px solid rgba(11, 27, 43, 0.22);
-  box-shadow: 0 8px 24px rgba(11, 27, 43, 0.06);
+  background: #10231e;
+  border: 1px solid var(--color-dark-line);
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(8, 19, 17, 0.06);
 }
 
 .ontology-node::before {
@@ -193,7 +214,7 @@ html[lang="en"] .hero-copy h1 {
   left: -1px;
   width: 26px;
   height: 3px;
-  background: var(--color-blue);
+  background: var(--color-signal);
   content: "";
 }
 
@@ -202,19 +223,19 @@ html[lang="en"] .hero-copy h1 {
 .ontology-core small,
 .ontology-core span {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
 }
 
 .ontology-node small {
   margin-bottom: 3px;
-  color: var(--color-orange);
-  font-size: 0.42rem;
+  color: var(--color-accent);
+  font-size: 0.5rem;
   letter-spacing: 0.1em;
 }
 
 .ontology-node strong {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(0.9rem, 1.35vw, 1.1rem);
   letter-spacing: -0.025em;
   line-height: 1.1;
@@ -223,7 +244,7 @@ html[lang="en"] .hero-copy h1 {
 .ontology-node span {
   margin-top: 5px;
   color: var(--color-ink-soft);
-  font-size: 0.44rem;
+  font-size: 0.5rem;
   letter-spacing: 0.02em;
 }
 
@@ -253,9 +274,10 @@ html[lang="en"] .hero-copy h1 {
   width: 40%;
   padding: 18px 14px;
   color: var(--color-white);
-  background: var(--color-ink);
-  border: 1px solid var(--color-ink);
-  box-shadow: 10px 10px 0 rgba(36, 87, 214, 0.18);
+  background: var(--color-primary);
+  border: 1px solid rgba(158, 217, 190, 0.35);
+  border-radius: 4px;
+  box-shadow: 0 12px 28px rgba(8, 19, 17, 0.25);
   text-align: center;
   transform: translate(-50%, -50%);
 }
@@ -266,30 +288,30 @@ html[lang="en"] .hero-copy h1 {
   right: -1px;
   width: 40px;
   height: 3px;
-  background: var(--color-orange);
+  background: var(--color-accent);
   content: "";
 }
 
 .ontology-core small {
   margin-bottom: 7px;
-  color: var(--color-orange-soft);
-  font-size: 0.43rem;
+  color: var(--color-signal);
+  font-size: 0.5rem;
   letter-spacing: 0.13em;
 }
 
 .ontology-core strong {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(1rem, 1.75vw, 1.45rem);
   letter-spacing: -0.035em;
-  line-height: 0.95;
+  line-height: 1.15;
   white-space: pre-line;
 }
 
 .ontology-core span {
   margin-top: 9px;
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 0.42rem;
+  color: var(--color-signal);
+  font-size: 0.5rem;
   letter-spacing: 0.03em;
 }
 
@@ -301,8 +323,8 @@ html[lang="en"] .hero-copy h1 {
   align-items: center;
   gap: 8px;
   color: var(--color-ink-soft);
-  font-family: var(--font-mono);
-  font-size: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
   letter-spacing: 0.1em;
 }
 
@@ -312,7 +334,7 @@ html[lang="en"] .hero-copy h1 {
   height: 1px;
   margin-right: 8px;
   vertical-align: middle;
-  background: rgba(36, 87, 214, 0.52);
+  background: rgba(158, 217, 190, 0.52);
   content: "";
 }
 
@@ -331,12 +353,12 @@ html[lang="en"] .hero-copy h1 {
   padding: 23px 28px;
   border-bottom: 1px solid var(--color-line);
   border-left: 1px solid var(--color-line);
-  background: rgba(252, 250, 245, 0.42);
+  background: rgba(27, 74, 70, 0.12);
 }
 
 .hero-fact > span {
-  color: var(--color-orange);
-  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-family: var(--font-sans);
   font-size: 0.62rem;
 }
 
@@ -345,14 +367,14 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .hero-fact strong {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 1rem;
   letter-spacing: -0.02em;
 }
 
 .hero-fact small {
   color: var(--color-ink-soft);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.56rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -389,7 +411,7 @@ html[lang="en"] .hero-copy h1 {
 
 .profile-frame__number,
 .profile-frame figcaption {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.54rem;
   letter-spacing: 0.11em;
 }
@@ -408,16 +430,6 @@ html[lang="en"] .hero-copy h1 {
   color: var(--color-ink-soft);
   font-size: clamp(1.05rem, 1.7vw, 1.3rem);
   line-height: 1.85;
-}
-
-.about-copy > p:first-child::first-letter {
-  float: left;
-  margin: 9px 10px 0 0;
-  color: var(--color-blue);
-  font-family: var(--font-display);
-  font-size: 4.3rem;
-  font-weight: 800;
-  line-height: 0.72;
 }
 
 .principle-list {
@@ -439,15 +451,15 @@ html[lang="en"] .hero-copy h1 {
   width: 38px;
   height: 38px;
   color: var(--color-white);
-  background: var(--color-blue);
+  background: var(--color-primary);
   border-radius: 50%;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.64rem;
 }
 
 .principle-item h3 {
   margin-bottom: 6px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 1.12rem;
 }
 
@@ -459,8 +471,8 @@ html[lang="en"] .hero-copy h1 {
 
 .experience-section {
   background:
-    linear-gradient(rgba(36, 87, 214, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 87, 214, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(27, 74, 70, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 74, 70, 0.045) 1px, transparent 1px),
     var(--color-paper);
   background-size: 48px 48px;
 }
@@ -475,14 +487,14 @@ html[lang="en"] .hero-copy h1 {
 .career-column__label,
 .education-panel__label {
   margin-bottom: 18px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.62rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .career-column__label {
-  color: var(--color-blue);
+  color: var(--color-primary);
 }
 
 .career-list {
@@ -499,8 +511,8 @@ html[lang="en"] .hero-copy h1 {
 
 .career-item__index {
   padding-top: 5px;
-  color: var(--color-blue);
-  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
   font-size: 0.62rem;
   letter-spacing: 0.1em;
 }
@@ -518,14 +530,14 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .career-item__meta strong {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 0.86rem;
 }
 
 .career-item__meta time {
   flex: 0 0 auto;
-  color: var(--color-blue);
-  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
   font-size: 0.6rem;
   letter-spacing: 0.06em;
 }
@@ -535,7 +547,7 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .career-item__heading h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(1.55rem, 2.6vw, 2.25rem);
   letter-spacing: -0.045em;
   line-height: 1.08;
@@ -545,8 +557,8 @@ html[lang="en"] .hero-copy h1 {
   flex: 0 0 auto;
   padding: 6px 9px;
   color: var(--color-ink);
-  background: var(--color-orange);
-  font-family: var(--font-mono);
+  background: var(--color-signal);
+  font-family: var(--font-sans);
   font-size: 0.52rem;
   letter-spacing: 0.1em;
 }
@@ -554,7 +566,7 @@ html[lang="en"] .hero-copy h1 {
 .career-item__department {
   margin-top: 8px;
   color: var(--color-ink);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
 }
@@ -578,7 +590,7 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .education-panel__label {
-  color: var(--color-orange-soft);
+  color: var(--color-signal);
 }
 
 .education-list {
@@ -593,15 +605,15 @@ html[lang="en"] .hero-copy h1 {
 .education-item time {
   display: block;
   margin-bottom: 9px;
-  color: var(--color-orange-soft);
-  font-family: var(--font-mono);
+  color: var(--color-signal);
+  font-family: var(--font-sans);
   font-size: 0.58rem;
   letter-spacing: 0.08em;
 }
 
 .education-item h3 {
   margin-bottom: 8px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.35;
 }
@@ -624,7 +636,7 @@ html[lang="en"] .hero-copy h1 {
 .skills-section {
   color: var(--color-white);
   background:
-    radial-gradient(circle at 10% 10%, rgba(36, 87, 214, 0.36), transparent 28%),
+    radial-gradient(circle at 10% 10%, rgba(27, 74, 70, 0.3), transparent 40%),
     var(--color-ink);
   overflow: hidden;
 }
@@ -644,7 +656,7 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .skills-section .section-heading .eyebrow {
-  color: var(--color-orange-soft);
+  color: var(--color-signal);
 }
 
 .skills-section .section-heading h2 {
@@ -670,8 +682,7 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .skill-group:hover {
-  color: var(--color-ink);
-  background: var(--color-orange);
+  background: rgba(27, 74, 70, 0.42);
 }
 
 .skill-group__head {
@@ -683,23 +694,23 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .skill-group__head > span {
-  color: var(--color-orange-soft);
-  font-family: var(--font-mono);
+  color: var(--color-signal);
+  font-family: var(--font-sans);
   font-size: 0.66rem;
 }
 
 .skill-group:hover .skill-group__head > span {
-  color: var(--color-ink);
+  color: var(--color-signal);
 }
 
 .skill-group h3 {
   max-width: 220px;
   margin-bottom: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(1.55rem, 2.3vw, 2.2rem);
   font-weight: 720;
   letter-spacing: -0.04em;
-  line-height: 1.05;
+  line-height: 1.18;
 }
 
 .skill-group > p {
@@ -711,7 +722,7 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .skill-group:hover > p {
-  color: rgba(11, 27, 43, 0.72);
+  color: var(--color-dark-muted);
 }
 
 .skill-group ul {
@@ -725,14 +736,14 @@ html[lang="en"] .hero-copy h1 {
   padding: 6px 9px;
   color: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.22);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.58rem;
   letter-spacing: 0.04em;
 }
 
 .skill-group:hover li {
-  color: var(--color-ink);
-  border-color: rgba(11, 27, 43, 0.34);
+  color: var(--color-white);
+  border-color: rgba(158, 217, 190, 0.42);
 }
 
 .credentials-layout {
@@ -745,18 +756,18 @@ html[lang="en"] .hero-copy h1 {
 .credentials-title span {
   display: block;
   margin-bottom: 18px;
-  color: var(--color-orange-soft);
-  font-family: var(--font-mono);
+  color: var(--color-signal);
+  font-family: var(--font-sans);
   font-size: 0.6rem;
   letter-spacing: 0.16em;
 }
 
 .credentials-title h3 {
   margin-bottom: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(2rem, 4vw, 3.8rem);
   letter-spacing: -0.045em;
-  line-height: 1;
+  line-height: 1.15;
 }
 
 .credentials-list {
@@ -772,15 +783,15 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .credential-item time {
-  color: var(--color-orange-soft);
-  font-family: var(--font-mono);
+  color: var(--color-signal);
+  font-family: var(--font-sans);
   font-size: 0.64rem;
   letter-spacing: 0.08em;
 }
 
 .credential-item h4 {
   margin-bottom: 5px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 1rem;
 }
 
@@ -791,7 +802,7 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .credential-item--patent {
-  background: rgba(255, 107, 53, 0.09);
+  background: rgba(158, 217, 190, 0.09);
 }
 
 .side-project-section {
@@ -801,8 +812,8 @@ html[lang="en"] .hero-copy h1 {
 .research-section {
   position: relative;
   background:
-    linear-gradient(rgba(36, 87, 214, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 87, 214, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(27, 74, 70, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 74, 70, 0.045) 1px, transparent 1px),
     var(--color-paper-bright);
   background-size: 48px 48px;
   overflow: hidden;
@@ -814,12 +825,12 @@ html[lang="en"] .hero-copy h1 {
   right: -130px;
   width: 340px;
   height: 340px;
-  border: 1px solid rgba(36, 87, 214, 0.12);
+  border: 1px solid rgba(27, 74, 70, 0.12);
   border-radius: 50%;
   content: "";
   box-shadow:
-    0 0 0 58px rgba(36, 87, 214, 0.025),
-    0 0 0 116px rgba(255, 107, 53, 0.018);
+    0 0 0 58px rgba(27, 74, 70, 0.025),
+    0 0 0 116px rgba(158, 217, 190, 0.018);
 }
 
 .research-section .shell {
@@ -832,7 +843,8 @@ html[lang="en"] .hero-copy h1 {
   min-height: 430px;
   background: var(--color-paper-bright);
   border: 1px solid var(--color-line);
-  box-shadow: 0 12px 40px rgba(11, 27, 43, 0.07);
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(8, 19, 17, 0.07);
   overflow: hidden;
 }
 
@@ -863,8 +875,8 @@ html[lang="en"] .hero-copy h1 {
   justify-content: space-between;
   gap: 20px;
   margin-bottom: 38px;
-  color: var(--color-blue);
-  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
   font-size: 0.59rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -878,10 +890,10 @@ html[lang="en"] .hero-copy h1 {
 
 .research-card__body h3 {
   margin-bottom: 22px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(2.15rem, 3.7vw, 3.65rem);
   letter-spacing: -0.05em;
-  line-height: 1.04;
+  line-height: 1.16;
 }
 
 .research-card__body > p {
@@ -909,10 +921,10 @@ html[lang="en"] .hero-copy h1 {
 
 .research-card__tags li {
   padding: 6px 10px;
-  color: var(--color-blue-dark);
-  background: rgba(36, 87, 214, 0.07);
-  border: 1px solid rgba(36, 87, 214, 0.18);
-  font-family: var(--font-mono);
+  color: var(--color-primary-dark);
+  background: rgba(27, 74, 70, 0.07);
+  border: 1px solid rgba(27, 74, 70, 0.18);
+  font-family: var(--font-sans);
   font-size: 0.56rem;
 }
 
@@ -922,16 +934,16 @@ html[lang="en"] .hero-copy h1 {
   gap: 34px;
   margin-top: 22px;
   padding: 28px 32px;
-  background: rgba(252, 250, 245, 0.62);
+  background: rgba(255, 255, 255, 0.62);
   border: 1px solid var(--color-line);
-  border-left: 3px solid var(--color-blue);
+  border-left: 3px solid var(--color-primary);
 }
 
 .side-project-compact__heading span {
   display: block;
   margin-bottom: 10px;
-  color: var(--color-blue);
-  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
   font-size: 0.54rem;
   font-weight: 700;
   letter-spacing: 0.09em;
@@ -939,7 +951,7 @@ html[lang="en"] .hero-copy h1 {
 
 .side-project-compact__heading h3 {
   margin-bottom: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(1.35rem, 2.3vw, 2rem);
   letter-spacing: -0.035em;
   line-height: 1.08;
@@ -963,7 +975,7 @@ html[lang="en"] .hero-copy h1 {
   padding: 5px 8px;
   color: var(--color-ink-soft);
   border: 1px solid var(--color-line);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.52rem;
 }
 
@@ -989,18 +1001,18 @@ html[lang="en"] .hero-copy h1 {
 
 .research-domain-board__heading span {
   margin-bottom: 13px;
-  color: var(--color-orange-soft);
-  font-family: var(--font-mono);
+  color: var(--color-signal);
+  font-family: var(--font-sans);
   font-size: 0.58rem;
   letter-spacing: 0.12em;
 }
 
 .research-domain-board__heading strong {
   max-width: 440px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(2rem, 3.6vw, 3.45rem);
   letter-spacing: -0.05em;
-  line-height: 0.98;
+  line-height: 1.15;
 }
 
 .research-domain-board ul {
@@ -1019,7 +1031,7 @@ html[lang="en"] .hero-copy h1 {
   padding: 18px;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.65rem;
   letter-spacing: 0.04em;
 }
@@ -1028,7 +1040,7 @@ html[lang="en"] .hero-copy h1 {
   width: 7px;
   height: 7px;
   margin: 0 10px 3px 0;
-  background: var(--color-orange);
+  background: var(--color-signal);
   border-radius: 50%;
   content: "";
 }
@@ -1041,8 +1053,8 @@ html[lang="en"] .hero-copy h1 {
   margin-top: auto;
   padding: 22px 24px;
   color: var(--color-ink);
-  background: rgba(36, 87, 214, 0.07);
-  border-left: 3px solid var(--color-orange);
+  background: rgba(27, 74, 70, 0.07);
+  border-left: 3px solid var(--color-accent);
   font-size: 0.82rem;
 }
 
@@ -1052,15 +1064,17 @@ html[lang="en"] .hero-copy h1 {
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 28px;
 }
 
 .project-card {
   grid-column: span 6;
+  min-width: 0;
   background: var(--color-paper-bright);
   border: 1px solid var(--color-line);
-  box-shadow: 0 12px 40px rgba(11, 27, 43, 0.07);
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(8, 19, 17, 0.07);
   overflow: hidden;
   transition:
     transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -1081,7 +1095,7 @@ html[lang="en"] .hero-copy h1 {
 .project-card__media {
   position: relative;
   min-height: 330px;
-  background: var(--color-blue);
+  background: var(--color-primary);
   overflow: hidden;
 }
 
@@ -1112,7 +1126,7 @@ html[lang="en"] .hero-copy h1 {
   color: var(--color-white);
   background: var(--color-ink);
   border-radius: 50%;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.66rem;
 }
 
@@ -1122,7 +1136,7 @@ html[lang="en"] .hero-copy h1 {
   background:
     linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px),
-    linear-gradient(135deg, var(--color-blue-dark), var(--color-blue));
+    linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
   background-size: 34px 34px, 34px 34px, auto;
 }
 
@@ -1131,7 +1145,7 @@ html[lang="en"] .hero-copy h1 {
   bottom: -0.15em;
   left: 20px;
   color: rgba(255, 255, 255, 0.16);
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 13rem;
   font-weight: 800;
   letter-spacing: -0.1em;
@@ -1143,9 +1157,9 @@ html[lang="en"] .hero-copy h1 {
   display: block;
   width: 14px;
   height: 14px;
-  background: var(--color-orange);
+  background: var(--color-accent);
   border-radius: 50%;
-  box-shadow: 0 0 0 10px rgba(255, 107, 53, 0.18);
+  box-shadow: 0 0 0 10px rgba(158, 217, 190, 0.18);
 }
 
 .project-graphic i:nth-of-type(1) {
@@ -1172,8 +1186,8 @@ html[lang="en"] .hero-copy h1 {
   justify-content: space-between;
   gap: 20px;
   margin-bottom: 32px;
-  color: var(--color-blue);
-  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.07em;
@@ -1186,11 +1200,11 @@ html[lang="en"] .hero-copy h1 {
 
 .project-card h3 {
   margin-bottom: 18px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(1.55rem, 3vw, 2.6rem);
   font-weight: 720;
   letter-spacing: -0.045em;
-  line-height: 1.06;
+  line-height: 1.18;
 }
 
 .project-card__body > p {
@@ -1210,9 +1224,9 @@ html[lang="en"] .hero-copy h1 {
 
 .project-card li {
   padding: 5px 9px;
-  background: rgba(36, 87, 214, 0.08);
-  border: 1px solid rgba(36, 87, 214, 0.16);
-  font-family: var(--font-mono);
+  background: rgba(27, 74, 70, 0.08);
+  border: 1px solid rgba(27, 74, 70, 0.16);
+  font-family: var(--font-sans);
   font-size: 0.56rem;
 }
 
@@ -1221,7 +1235,7 @@ html[lang="en"] .hero-copy h1 {
   background:
     linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    var(--color-blue);
+    var(--color-ink);
   background-size: 56px 56px;
 }
 
@@ -1233,29 +1247,30 @@ html[lang="en"] .hero-copy h1 {
 }
 
 .contact-section .eyebrow {
-  color: var(--color-orange-soft);
+  color: var(--color-signal);
 }
 
 .contact-section h2 {
   max-width: 720px;
   margin-bottom: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(3rem, 6vw, 6rem);
   font-weight: 760;
-  letter-spacing: -0.06em;
-  line-height: 0.92;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
   line-break: strict;
   white-space: pre-line;
 }
 
 html[lang="zh-TW"] .contact-section h2 {
   font-size: clamp(2.8rem, 5vw, 5rem);
-  line-height: 1.02;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
 }
 
 html[lang="en"] .contact-section h2 {
   font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-  line-height: 1;
+  line-height: 1.12;
 }
 
 .contact-copy > p {
@@ -1270,7 +1285,7 @@ html[lang="en"] .contact-section h2 {
   align-items: center;
   gap: 11px;
   margin-bottom: 50px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.63rem;
   letter-spacing: 0.08em;
 }
@@ -1278,9 +1293,9 @@ html[lang="en"] .contact-section h2 {
 .availability-dot i {
   width: 8px;
   height: 8px;
-  background: var(--color-green);
+  background: var(--color-signal);
   border-radius: 50%;
-  box-shadow: 0 0 0 6px rgba(84, 213, 140, 0.18);
+  box-shadow: 0 0 0 6px rgba(158, 217, 190, 0.18);
 }
 
 .contact-links {
@@ -1315,6 +1330,6 @@ html[lang="en"] .contact-section h2 {
 @keyframes status-pulse {
   50% {
     opacity: 0.45;
-    box-shadow: 0 0 0 9px rgba(84, 213, 140, 0.06);
+    box-shadow: 0 0 0 9px rgba(158, 217, 190, 0.06);
   }
 }

@@ -29,4 +29,10 @@ npm run lint
 npm run build
 ```
 
-Last updated: 2026/08/23
+## Visual theme
+
+保留一頁式區塊與響應式 Layout，使用 GW development 的主綠 `#1B4A46`、極黑綠 `#081311`、近白 `#F5F3ED` 與訊號綠 `#9ED9BE`。樣式 tokens 集中於 `src/styles/foundation.css`。
+
+全站共用字型鏈：`Noto Sans, Microsoft JhengHei UI, 微軟正黑體, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif`。Noto Sans 一般／斜體變數字型隨網站提供，不依賴外部字型服務；繁體中文由系統 fallback 顯示。SIL OFL 授權隨部署提供於 `public/fonts/OFL.txt`，正式 GW 圖騰位於 `src/assets/brand/`。
+
+Last updated: 2026/11/09

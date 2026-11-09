@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Icon } from "@/components/Icon"
+import brandSymbol from "@/assets/brand/gw-symbol-green.svg"
 import type { Language, SectionId, SiteContent } from "@/types/site"
 
 interface SiteHeaderProps {
@@ -28,7 +29,7 @@ export const SiteHeader = ({
     <header className="site-header">
       <div className="site-header__inner shell">
         <a aria-label="Guan Wei — Home" className="brand" href="#home">
-          <span className="brand__mark">GW</span>
+          <img alt="" className="brand__mark" src={brandSymbol} width="52" height="39" />
           <span className="brand__text">Guan Wei Su</span>
         </a>
 

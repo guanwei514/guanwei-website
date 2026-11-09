@@ -19,8 +19,8 @@
   position: fixed;
   inset: 0 0 auto;
   z-index: 100;
-  border-bottom: 1px solid rgba(11, 27, 43, 0.1);
-  background: rgba(243, 240, 232, 0.88);
+  border-bottom: 1px solid var(--color-line);
+  background: rgba(245, 243, 237, 0.88);
   backdrop-filter: blur(18px);
 }
 
@@ -36,24 +36,17 @@
   justify-self: start;
   align-items: center;
   gap: 12px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: 650;
+  letter-spacing: 0.01em;
 }
 
 .brand__mark {
-  display: grid;
-  place-items: center;
-  width: 39px;
+  width: 52px;
   height: 39px;
-  color: var(--color-white);
-  background: var(--color-ink);
-  border-radius: 50%;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: -0.06em;
+  flex: 0 0 auto;
+  object-fit: contain;
 }
 
 .brand__text {
@@ -85,7 +78,7 @@
   bottom: -1px;
   left: 0;
   height: 3px;
-  background: var(--color-orange);
+  background: var(--color-accent);
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -102,8 +95,8 @@
 }
 
 .site-nav__list a span {
-  color: var(--color-blue);
-  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
   font-size: 0.58rem;
 }
 
@@ -130,9 +123,9 @@
   align-items: center;
   gap: 5px;
   padding: 9px 12px;
-  color: rgba(11, 27, 43, 0.45);
+  color: var(--color-ink-soft);
   background: transparent;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.68rem;
   font-weight: 700;
 }
@@ -166,6 +159,7 @@
   gap: 12px;
   min-height: 54px;
   padding: 14px 22px;
+  border-radius: 4px;
   font-size: 0.82rem;
   font-weight: 750;
   letter-spacing: 0.02em;
@@ -181,12 +175,12 @@
 
 .button--primary {
   color: var(--color-white);
-  background: var(--color-blue);
-  box-shadow: 8px 8px 0 var(--color-ink);
+  background: var(--color-primary);
+  box-shadow: 0 6px 18px rgba(8, 19, 17, 0.12);
 }
 
 .button--primary:hover {
-  background: var(--color-blue-dark);
+  background: var(--color-primary-dark);
 }
 
 .button--text {
@@ -214,11 +208,11 @@
 .section-heading h2 {
   max-width: 900px;
   margin-bottom: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(2.7rem, 5vw, 5rem);
   font-weight: 730;
-  letter-spacing: -0.055em;
-  line-height: 0.98;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
   line-break: strict;
   white-space: pre-line;
   text-wrap: balance;
@@ -226,13 +220,13 @@
 
 html[lang="zh-TW"] .section-heading h2 {
   font-size: clamp(2.5rem, 4.4vw, 4.5rem);
-  letter-spacing: -0.045em;
-  line-height: 1.06;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
 }
 
 html[lang="en"] .section-heading h2 {
   font-size: clamp(2.5rem, 4vw, 4rem);
-  line-height: 1.02;
+  line-height: 1.12;
 }
 
 .section-heading__intro {
@@ -258,7 +252,7 @@ html[lang="en"] .section-heading h2 {
 }
 
 .site-footer {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-dark-muted);
   background: var(--color-ink);
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
@@ -277,11 +271,6 @@ html[lang="en"] .section-heading h2 {
   color: var(--color-white);
 }
 
-.brand--footer .brand__mark {
-  color: var(--color-ink);
-  background: var(--color-orange);
-}
-
 .site-footer p {
   margin-bottom: 0;
   font-size: 0.74rem;
@@ -292,8 +281,8 @@ html[lang="en"] .section-heading h2 {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 18px;
-  color: rgba(255, 255, 255, 0.52);
-  font-family: var(--font-mono);
+  color: var(--color-dark-muted);
+  font-family: var(--font-sans);
   font-size: 0.64rem;
   letter-spacing: 0.04em;
 }
@@ -320,6 +309,6 @@ html[lang="en"] .section-heading h2 {
   height: 42px;
   padding: 11px;
   color: var(--color-ink);
-  background: var(--color-orange);
+  background: var(--color-signal);
   border-radius: 50%;
 }

@@ -1,4 +1,5 @@
 import { Icon } from "@/components/Icon"
+import brandSymbol from "@/assets/brand/gw-symbol-white.svg"
 import type { SiteContent } from "@/types/site"
 
 interface SiteFooterProps {
@@ -9,8 +10,8 @@ export const SiteFooter = ({ content }: SiteFooterProps) => (
   <footer className="site-footer">
     <div className="shell site-footer__inner">
       <div>
-        <a className="brand brand--footer" href="#home">
-          <span className="brand__mark">GW</span>
+        <a aria-label="Guan Wei — Home" className="brand brand--footer" href="#home">
+          <img alt="" className="brand__mark" src={brandSymbol} width="52" height="39" />
           <span className="brand__text">Guan Wei Su</span>
         </a>
         <div className="site-footer__meta">
